@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CV Ayari Rayen - Premium</title>
+  <style>
+    :root {
+      --primary: #1a365d;
+      /* Navy Blue profond (Bleu marine) */
+      --secondary: #2b6cb0;
+      /* Bleu plus sombre pour les accents */
+      --gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      /* Dégradé de gris très sombre vers bleu marine */
+      --dark: #111827;
+      /* Gris très sombre */
+      --light: #f8fafc;
+      /* Fond clair */
+      --text-main: #374151;
+      /* Texte normal */
+      --text-muted: #6b7280;
+      /* Texte secondaire */
+      --border: #e5e7eb;
+      /* Bordures */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background-color: #525659;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      color: var(--text-main);
+    }
+
+    .cv-page {
+      width: 210mm;
+      height: 297mm;
+      /* Hauteur fixe pour forcer sur une seule page */
+      background: white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* --- HEADER --- */
+    .header {
+      background: var(--gradient);
+      color: white;
+      padding: 20px 30px;
+      /* Marges réduites */
+      position: relative;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .name {
+      font-size: 28px;
+      /* Taille réduite */
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: 15px;
+      /* Taille réduite */
+      font-weight: 500;
+      opacity: 0.95;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 15px;
+      /* Espacement réduit */
+      font-size: 11.5px;
+      /* Taille réduite */
+      font-weight: 500;
+    }
+
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 15px;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    /* --- MAIN CONTAINER --- */
+    .main-container {
+      display: flex;
+      flex: 1;
+    }
+
+    /* --- LEFT COLUMN --- */
+    .left-col {
+      width: 34%;
+      background: var(--light);
+      padding: 20px 25px;
+      /* Marges réduites */
+      border-right: 1px solid var(--border);
+    }
+
+    .section {
+      margin-bottom: 18px;
+      /* Espacement entre sections réduit */
+    }
+
+    .section-title {
+      font-size: 14px;
+      /* Taille réduite */
+      font-weight: 800;
+      color: var(--dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 3px;
+      background: var(--primary);
+      margin-right: 8px;
+      border-radius: 2px;
+    }
+
+    .profile-text {
+      font-size: 11.5px;
+      /* Taille réduite */
+      line-height: 1.4;
+      /* Interligne réduit */
+      text-align: justify;
+      color: var(--text-main);
+    }
+
+    /* SKILLS PILLS */
+    .skill-category {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+
+    .skill-category:first-child {
+      margin-top: 0;
+    }
+
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      /* Espacement réduit */
+    }
+
+    .pill {
+      background: white;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      /* Padding réduit */
+      border-radius: 12px;
+      font-size: 10px;
+      /* Taille réduite */
+      font-weight: 600;
+    }
+
+    /* LANGUAGES & QUALITIES */
+    .list-block {
+      list-style: none;
+    }
+
+    .list-block li {
+      font-size: 11.5px;
+      /* Taille réduite */
+      padding: 5px 0;
+      /* Padding réduit */
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .list-block li:last-child {
+      border-bottom: none;
+    }
+
+    .list-block .level {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--secondary);
+      background: #e2e8f0;
+      /* Gris clair au lieu de bleu ciel */
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
+    .qualities-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      /* Espacement réduit */
+    }
+
+    .quality-item {
+      font-size: 11.5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .quality-item::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 8px;
+      background: #e2e8f0;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 9px;
+    }
+
+    /* --- RIGHT COLUMN --- */
+    .right-col {
+      width: 66%;
+      padding: 20px 30px;
+      /* Marges réduites */
+      background: white;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 15px;
+      border-left: 2px solid var(--border);
+      margin-top: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 14px;
+      /* Espacement réduit */
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      /* Align with border */
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(26, 54, 93, 0.1);
+    }
+
+    .exp-date {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+      display: inline-block;
+      background: #f1f5f9;
+      /* Gris très clair au lieu de bleu ciel */
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .exp-role {
+      font-size: 14px;
+      /* Taille réduite */
+      font-weight: 800;
+      color: var(--dark);
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .exp-company {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .exp-company::before {
+      content: '🏢';
+      margin-right: 5px;
+      font-size: 10px;
+    }
+
+    .exp-details {
+      list-style-type: none;
+      font-size: 11.5px;
+      /* Taille réduite */
+      line-height: 1.4;
+      /* Interligne réduit */
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .exp-details li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 3px;
+    }
+
+    .exp-details li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 5px;
+    }
+
+    .tech-stack span {
+      background: var(--light);
+      color: var(--primary);
+      font-size: 10px;
+      /* Taille réduite */
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    /* --- PRINT OPTIMIZATION --- */
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+      }
+
+      .cv-page {
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      .header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cv-page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-content">
+        <div class="name">Ayari Rayen</div>
+        <div class="title">Développeur Web & Desktop Full-Stack</div>
+        <div class="contact-info">
+          <span>📍 Nabeul, Tunisie</span>
+          <span>📞 +216 94 816 735</span>
+          <span>✉️ ayarirayen539@gmail.com</span>
+          <span><img src="Github.png" alt="GitHub" style="width: 14px; height: 14px; margin-right: 6px; vertical-align: middle; filter: brightness(0) invert(1);"> <a href="https://github.com/rayenn-ar" target="_blank">github.com/rayenn-ar</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+
+      <!-- LEFT COLUMN -->
+      <div class="left-col">
+
+        <div class="section">
+          <h2 class="section-title">Profil</h2>
+          <p class="profile-text">
+            Développeur logiciel passionné, spécialisé dans la conception d'applications web modernes et de solutions de
+            bureau performantes. J'accompagne les entreprises dans leur digitalisation en créant des systèmes sur mesure
+            et des interfaces intuitives.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Compétences</h2>
+
+          <div class="skill-category">Frontend</div>
+          <div class="pills-container">
+            <span class="pill">React 18</span>
+            <span class="pill">Next.js</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">TailwindCSS</span>
+          </div>
+
+          <div class="skill-category">Backend & BDD</div>
+          <div class="pills-container">
+            <span class="pill">Node.js</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">MongoDB</span>
+            <span class="pill">PHP/MySQL</span>
+          </div>
+
+          <div class="skill-category">Desktop & Outils</div>
+          <div class="pills-container">
+            <span class="pill">Electron</span>
+            <span class="pill">Tauri</span>
+            <span class="pill">Git</span>
+            <span class="pill">GitHub</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Langues</h2>
+          <ul class="list-block">
+            <li><strong>Arabe</strong> <span class="level">Maternelle</span></li>
+            <li><strong>Français</strong> <span class="level">B2 Courant</span></li>
+            <li><strong>Anglais</strong> <span class="level">B1</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">Atouts</h2>
+          <div class="qualities-grid">
+            <div class="quality-item">Autonomie & Rigueur</div>
+            <div class="quality-item">Esprit logique poussé</div>
+            <div class="quality-item">Polyvalence Web/Desktop</div>
+            <div class="quality-item">Apprentissage rapide</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-col">
+
+        <div class="section">
+          <h2 class="section-title">Expériences & Projets</h2>
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <span class="exp-date">2024 - Présent</span>
+              <div class="exp-role">Solutions de Gestion & Caisse (Desktop)</div>
+              <div class="exp-company">Projets Freelance / Indépendants</div>
+              <ul class="exp-details">
+                <li>Développement complet d'un <strong>système de caisse</strong> pour une supérette (interface rapide,
+                  gestion des ventes).</li>
+                <li>Création d'une application de <strong>gestion de dépôts fournisseurs</strong> avec suivi des stocks.
+                </li>
+                <li>Conception d'un <strong>système complet pour café/restaurant</strong> avec gestion des tables,gestion stock et
+                  statistiques.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>React</span> <span>Electron</span> <span>Tauri</span> <span>Node.js</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="exp-date">2025</span>
+              <div class="exp-role">Plateforme E-commerce Complète</div>
+              <div class="exp-company">Projet Indépendant Avancé</div>
+              <ul class="exp-details">
+                <li>Conception de bout en bout d'une boutique en ligne dynamique et responsive.</li>
+                <li>Mise en place du catalogue de produits et de la gestion de panier sécurisée.</li>
+                <li>Optimisation de la base de données NoSQL pour garantir des temps de réponse rapides.</li>
+              </ul>
+              <div class="tech-stack">
+                <span>React 18</span> <span>Node.js</span> <span>MongoDB</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span class="exp-date">2026</span>
+              <div class="exp-role">App de Réservation - Salon de Coiffure</div>
+              <div class="exp-company">Mission Freelance</div>
+              <ul class="exp-details">
+                <li>Création d'une application web sur mesure pour la prise de rendez-vous en ligne.</li>
+                <li>Modélisation d'une base de données relationnelle sécurisée pour la gestion des clients.</li>
+                <li>Typage strict du code pour assurer robustesse et maintenabilité (TypeScript).</li>
+              </ul>
+              <div class="tech-stack">
+                <span>Next.js</span> <span>TypeScript</span> <span>PostgreSQL</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="section" style="margin-top: 15px;">
+          <h2 class="section-title">Formation</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="exp-date">2025 - 2026</span>
+              <div class="exp-role">Business Computing (2ème année)</div>
+              <div class="exp-company">IT Business School - Nabeul</div>
+              <ul class="exp-details">
+                <li>Spécialisation en ingénierie logicielle, algorithmique avancée et conception d'architectures web et
+                  bases de données.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <span class="exp-date">2023 - 2025</span>
+              <div class="exp-role">Génie Logiciel et Sciences Informatiques</div>
+              <div class="exp-company">Faculté des Sciences de Gabès</div>
+              <ul class="exp-details">
+                <li>Acquisition des fondamentaux en programmation, algorithmique et bases de données.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
