@@ -80,67 +80,114 @@
   "projects": [
     {
       "id": 1,
-      "title": "Solutions de Gestion & Caisse (Desktop)",
-      "description": "Développement complet d'un système de caisse pour supérette, gestion de dépôts fournisseurs, système complet pour café/restaurant.",
-      "role": "Développeur freelance — conception, développement, optimisation.",
+      "title": " Application POS Superette",
+      "description": "Application POS (Point of Sale) complète pour la gestion d'une supérette : caisse enregistreuse, suivi des ventes, gestion des stocks et des fournisseurs. Fonctionne 100% hors ligne.",
+      "role": "Développeur freelance — conception, développement, déploiement.",
       "technologies": [
+        "JavaScript",
         "React",
-        "Electron",
-        "Tauri",
-        "Node.js"
+        "Node.js",
+        "Electron"
       ],
-      "type": "Freelance / Indépendant",
-      "date": "2024 - Présent",
+      "type": "Mission Freelance",
+      "date": "2026",
       "results": [
-        "Interface rapide et ergonomique",
-        "Gestion des ventes, stocks, statistiques",
-        "Applications desktop performantes"
+        "Caisse enregistreuse opérationnelle",
+        "Gestion des stocks en temps réel",
+        "Mode offline 100% fonctionnel"
       ],
-      "github": "https://github.com/rayenn-ar",
+      "github": "https://github.com/rayenn-ar/yassin-shop",
       "demo": "#",
       "image": "/projects/gestion-caisse.jpg"
     },
     {
       "id": 2,
+      "title": "Gestion Supérette",
+      "description": "Système de gestion complet pour supérette : inventaire, dépôts fournisseurs, suivi des ventes et tableaux de bord statistiques adaptés aux petits commerces locaux.",
+      "role": "Développeur freelance — conception, développement, optimisation.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Electron",
+        "Tauri"
+      ],
+      "type": "Freelance / Indépendant",
+      "date": "2026",
+      "results": [
+        "Interface rapide et ergonomique",
+        "Gestion des ventes, stocks, statistiques",
+        "Application desktop performante"
+      ],
+      "github": "https://github.com/rayenn-ar/gestion-superette",
+      "demo": "#",
+      "image": "/projects/gestion-caisse.jpg"
+    },
+    {
+      "id": 3,
       "title": "Plateforme E-commerce Complète",
-      "description": "Conception d'une boutique en ligne dynamique, gestion panier, optimisation base NoSQL.",
+      "description": "Boutique en ligne moderne avec gestion de catalogue, panier d'achat, authentification et interface responsive. Développée avec React, TypeScript et Redux Toolkit.",
       "role": "Développeur fullstack — conception, développement, optimisation.",
       "technologies": [
-        "React 18",
-        "Node.js",
-        "MongoDB"
+        "React",
+        "TypeScript",
+        "Redux Toolkit"
       ],
       "type": "Projet Indépendant",
       "date": "2025",
       "results": [
         "Site responsive et sécurisé",
         "Gestion catalogue et panier",
-        "Optimisation base de données"
+        "State management avec Redux Toolkit"
       ],
-      "github": "https://github.com/rayenn-ar",
+      "github": "https://github.com/rayenn-ar/E-commerce",
       "demo": "#",
       "image": "/projects/ecommerce.jpg"
     },
     {
-      "id": 3,
-      "title": "App de Réservation - Salon de Coiffure",
-      "description": "Application web sur mesure pour prise de rendez-vous, base de données relationnelle, typage TypeScript.",
-      "role": "Développeur freelance — conception, développement.",
+      "id": 4,
+      "title": "App de Gestion — Salon de Coiffure",
+      "description": "Application web fullstack sur mesure pour la gestion complète d'un salon de coiffure : prise de rendez-vous en ligne, gestion des clients, des employés et des services.",
+      "role": "Développeur freelance — conception, développement, déploiement.",
       "technologies": [
         "Next.js",
         "TypeScript",
+        "Node.js",
+        "Express",
+        "Prisma",
         "PostgreSQL"
       ],
       "type": "Mission Freelance",
       "date": "2026",
       "results": [
-        "Gestion sécurisée des clients",
-        "Base de données relationnelle",
-        "Code robuste et maintenable"
+        "Réservation en ligne sécurisée",
+        "Gestion complète des clients et rendez-vous",
+        "Base de données relationnelle avec Prisma ORM"
       ],
-      "github": "https://github.com/rayenn-ar",
+      "github": "https://github.com/rayenn-ar/salon-coiffure-app",
       "demo": "#",
       "image": "/projects/reservation.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Portfolio Personnel Next.js",
+      "description": "Portfolio professionnel full-stack développé avec Next.js 15 et TypeScript, incluant un panneau d'administration pour gérer les projets, compétences et expériences en temps réel.",
+      "role": "Développeur fullstack — conception, design, développement, déploiement.",
+      "technologies": [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "React"
+      ],
+      "type": "Projet Personnel",
+      "date": "2026",
+      "results": [
+        "Interface moderne et responsive",
+        "Panneau admin avec gestion en temps réel",
+        "Déployé sur Vercel"
+      ],
+      "github": "https://github.com/rayenn-ar/portfolio-",
+      "demo": "https://portfolio-blue-gamma-ma9bljwnyv.vercel.app",
+      "image": "/projects/portfolio.jpg"
     }
   ],
   "qualities": [
