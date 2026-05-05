@@ -1,10 +1,14 @@
 "use client";
 
 import { usePortfolio } from "@/context/PortfolioContext";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export default function Footer() {
   const { data } = usePortfolio();
   const { personalInfo } = data;
+  const { lang } = useLanguage();
+  const tr = t(lang);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,7 +22,7 @@ export default function Footer() {
         </div>
 
         <p className="text-text-muted text-sm text-center">
-          © {currentYear} {personalInfo.firstName} {personalInfo.lastName}. Tous droits réservés.
+          {currentYear} {personalInfo.firstName} {personalInfo.lastName}. {tr.footer.rights}
         </p>
 
         <div className="flex items-center gap-4">

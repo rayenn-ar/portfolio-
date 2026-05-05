@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePortfolio } from "@/context/PortfolioContext";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export default function Projects() {
   const { data } = usePortfolio();
   const { projects } = data;
+  const { lang } = useLanguage();
+  const tr = t(lang);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -23,11 +27,11 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="text-3xl sm:text-4xl font-bold font-[Poppins] mb-4">
-            Mes <span className="gradient-text">Projets</span>
+            {tr.projects.title} <span className="gradient-text">{tr.projects.titleHighlight}</span>
           </h2>
           <div className="section-line mx-auto mb-6" />
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Voici les projets sur lesquels j&apos;ai travaillé. Chaque projet m&apos;a permis de développer de nouvelles compétences.
+            {tr.projects.subtitle}
           </p>
         </div>
 
@@ -89,9 +93,9 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 text-center py-2.5 rounded-lg border border-border text-text-secondary text-sm font-medium hover:border-accent hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-300"
-                    aria-label={`Voir le code source GitHub du projet ${project.title}`}
+                    aria-label={`GitHub ${project.title}`}
                   >
-                    GitHub →
+                    {tr.projects.code} →
                   </a>
                   {project.demo !== "#" && (
                     <a
@@ -99,9 +103,9 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center py-2.5 rounded-lg bg-accent/10 text-accent text-sm font-medium hover:bg-accent/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-300"
-                      aria-label={`Voir la démo du projet ${project.title}`}
+                      aria-label={`Demo ${project.title}`}
                     >
-                      Démo →
+                      {tr.projects.demo} →
                     </a>
                   )}
                 </div>

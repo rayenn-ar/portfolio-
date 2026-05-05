@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { usePortfolio } from "@/context/PortfolioContext";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export default function Hero() {
   const { data } = usePortfolio();
-  const { personalInfo, bio } = data;
+  const { personalInfo } = data;
+  const { lang } = useLanguage();
+  const tr = t(lang);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -50,7 +54,7 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-[Poppins] leading-tight mb-4">
-          <span className="text-text-primary">Salut, je suis </span>
+          <span className="text-text-primary">{tr.hero.greeting} </span>
           <br />
           <span className="gradient-text">
             {personalInfo.firstName} {personalInfo.lastName}
@@ -64,7 +68,7 @@ export default function Hero() {
 
         {/* Bio */}
         <p className="text-text-secondary text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up animation-delay-300">
-          {bio.short} {bio.motivation}
+          {tr.hero.bio.short} {tr.hero.bio.motivation}
         </p>
 
         {/* CTA Buttons */}
@@ -73,14 +77,14 @@ export default function Hero() {
             href="#projets"
             className="btn-gradient text-white px-8 py-3.5 rounded-xl text-base font-semibold inline-flex items-center gap-2 relative z-10"
           >
-            <span className="relative z-10">Voir mes projets</span>
+            <span className="relative z-10">{tr.hero.seeProjects}</span>
           </a>
           <a
-            href={personalInfo.cvPath}
+            href={tr.nav.cvPath}
             download
             className="btn-outline text-text-primary px-8 py-3.5 rounded-xl text-base font-semibold inline-flex items-center gap-2"
           >
-            Télécharger CV
+            {tr.hero.downloadCV}
           </a>
         </div>
 

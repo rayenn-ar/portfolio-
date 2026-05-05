@@ -248,6 +248,21 @@
       "category": "backend"
     },
     {
+      "name": "Express.js",
+      "level": 70,
+      "category": "backend"
+    },
+    {
+      "name": "Prisma ORM",
+      "level": 65,
+      "category": "backend"
+    },
+    {
+      "name": "Redux Toolkit",
+      "level": 65,
+      "category": "frontend"
+    },
+    {
       "name": "PostgreSQL",
       "level": 65,
       "category": "backend"
@@ -280,6 +295,11 @@
     {
       "name": "GitHub",
       "level": 80,
+      "category": "tools"
+    },
+    {
+      "name": "Docker",
+      "level": 55,
       "category": "tools"
     }
   ],

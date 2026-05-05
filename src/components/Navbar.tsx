@@ -2,10 +2,24 @@
 
 import { useState, useEffect } from "react";
 import { usePortfolio } from "@/context/PortfolioContext";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export default function Navbar() {
   const { data } = usePortfolio();
-  const { navLinks, personalInfo } = data;
+  const { personalInfo } = data;
+  const { lang, toggleLang } = useLanguage();
+  const tr = t(lang);
+
+  const navItems = [
+    { href: "#accueil", label: tr.nav.home },
+    { href: "#apropos", label: tr.nav.about },
+    { href: "#competences", label: tr.nav.skills },
+    { href: "#projets", label: tr.nav.projects },
+    { href: "#parcours", label: tr.nav.experience },
+    { href: "#contact", label: tr.nav.contact },
+  ];
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#accueil");
@@ -15,7 +29,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20);
 
       // Detect active section
-      const sections = navLinks.map((l) => l.href.replace("#", ""));
+      const sections = navItems.map((l) => l.href.replace("#", ""));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el) {
@@ -61,7 +75,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
+          {navItems.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -77,14 +91,23 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA Button Desktop */}
-        <a
-          href={personalInfo.cvPath}
-          download
-          className="hidden md:inline-flex items-center gap-2 btn-gradient text-white px-5 py-2.5 rounded-xl text-sm font-semibold relative z-10"
-        >
-          <span className="relative z-10">Télécharger CV</span>
-        </a>
+        {/* Language + CTA Desktop */}
+        <div className="hidden md:flex items-center gap-2">
+          <button
+            onClick={toggleLang}
+            className="px-3 py-1.5 rounded-lg text-xs font-bold border border-accent/30 text-accent hover:bg-accent/10 transition-all duration-200 tracking-widest"
+            aria-label="Switch language"
+          >
+            {lang === "fr" ? "EN" : "FR"}
+          </button>
+          <a
+            href={tr.nav.cvPath}
+            download
+            className="inline-flex items-center gap-2 btn-gradient text-white px-5 py-2.5 rounded-xl text-sm font-semibold relative z-10"
+          >
+            <span className="relative z-10">{tr.nav.downloadCV}</span>
+          </a>
+        </div>
 
         {/* Mobile Hamburger */}
         <button
@@ -123,7 +146,7 @@ export default function Navbar() {
         aria-hidden={!isMobileOpen}
       >
         <div className="px-6 py-4 bg-surface/95 backdrop-blur-xl border-t border-border mt-2 rounded-b-2xl">
-          {navLinks.map((link, i) => (
+          {navItems.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
@@ -140,14 +163,23 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href={personalInfo.cvPath}
-            download
-            className="block mt-3 text-center btn-gradient text-white px-5 py-3 rounded-xl text-sm font-semibold relative z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            tabIndex={isMobileOpen ? 0 : -1}
-          >
-            <span className="relative z-10">Télécharger CV</span>
-          </a>
+          <div className="flex gap-3 mt-3">
+            <button
+              onClick={toggleLang}
+              className="flex-none px-4 py-3 rounded-xl text-xs font-bold border border-accent/30 text-accent hover:bg-accent/10 transition-all duration-200 tracking-widest"
+              tabIndex={isMobileOpen ? 0 : -1}
+            >
+              {lang === "fr" ? "EN" : "FR"}
+            </button>
+            <a
+              href={tr.nav.cvPath}
+              download
+              className="flex-1 text-center btn-gradient text-white px-5 py-3 rounded-xl text-sm font-semibold relative z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              tabIndex={isMobileOpen ? 0 : -1}
+            >
+              <span className="relative z-10">{tr.nav.downloadCV}</span>
+            </a>
+          </div>
         </div>
       </div>
     </nav>

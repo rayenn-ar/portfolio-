@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePortfolio } from "@/context/PortfolioContext";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export default function Skills() {
   const { data } = usePortfolio();
   const { skills, tools, languages } = data;
+  const { lang } = useLanguage();
+  const tr = t(lang);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -23,10 +27,10 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="text-3xl sm:text-4xl font-bold font-[Poppins] mb-4">
-            Mes <span className="gradient-text">Compétences</span>
+            {tr.skills.title} <span className="gradient-text">{tr.skills.titleHighlight}</span>
           </h2>
           <div className="section-line mx-auto mb-6" />
-          <p className="text-text-secondary max-w-2xl mx-auto">Les technologies et outils que je maîtrise pour créer des solutions web performantes.</p>
+          <p className="text-text-secondary max-w-2xl mx-auto">{tr.skills.subtitle}</p>
         </div>
 
         {/* Skills Bars */}
@@ -54,7 +58,7 @@ export default function Skills() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Tools */}
           <div className={`glass-card p-8 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <h3 className="text-xl font-bold font-[Poppins] text-text-primary mb-5">Outils & Environnement</h3>
+            <h3 className="text-xl font-bold font-[Poppins] text-text-primary mb-5">{tr.skills.tools}</h3>
             <div className="flex flex-wrap gap-3">
               {tools.map((tool) => (
                 <span key={tool} className="tech-tag">{tool}</span>
@@ -64,7 +68,7 @@ export default function Skills() {
 
           {/* Languages */}
           <div className={`glass-card p-8 transition-all duration-700 delay-600 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <h3 className="text-xl font-bold font-[Poppins] text-text-primary mb-5">Langues</h3>
+            <h3 className="text-xl font-bold font-[Poppins] text-text-primary mb-5">{tr.skills.languages}</h3>
             <div className="space-y-4">
               {languages.map((lang) => (
                 <div key={lang.name}>

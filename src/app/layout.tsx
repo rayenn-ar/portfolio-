@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 };
 
 import { PortfolioProvider } from "@/context/PortfolioContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -46,9 +47,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <PortfolioProvider>
-          {children}
-        </PortfolioProvider>
+        <LanguageProvider>
+          <PortfolioProvider>
+            {children}
+          </PortfolioProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePortfolio } from "@/context/PortfolioContext";
+import { useLanguage } from "@/context/LanguageContext";
+import { t } from "@/data/translations";
 
 export default function Experience() {
   const { data } = usePortfolio();
   const { education } = data;
+  const { lang } = useLanguage();
+  const tr = t(lang);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -20,14 +24,10 @@ export default function Experience() {
 
   const experiences = [
     {
-      title: "Freelance Étudiant",
-      place: "Travail à distance",
-      period: "2025 — Présent",
-      details: [
-        "Correction de bugs et amélioration de projets clients",
-        "Refonte visuelle et optimisation de sites web",
-        "Communication directe avec les clients",
-      ],
+      title: tr.experience.freelanceTitle,
+      place: tr.experience.freelancePlace,
+      period: tr.experience.freelancePeriod,
+      details: tr.experience.freelanceDetails,
       type: "work",
     },
     {
@@ -44,10 +44,10 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="text-3xl sm:text-4xl font-bold font-[Poppins] mb-4">
-            Mon <span className="gradient-text">Parcours</span>
+            {tr.experience.title} <span className="gradient-text">{tr.experience.titleHighlight}</span>
           </h2>
           <div className="section-line mx-auto mb-6" />
-          <p className="text-text-secondary max-w-2xl mx-auto">Formation et expériences qui ont forgé mes compétences.</p>
+          <p className="text-text-secondary max-w-2xl mx-auto">{tr.experience.subtitle}</p>
         </div>
 
         {/* Timeline */}
@@ -65,7 +65,7 @@ export default function Experience() {
               <div className="glass-card p-6 ml-6">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="text-sm font-semibold text-accent">
-                    {exp.type === "work" ? "PRO" : "EDU"}
+                    {exp.type === "work" ? tr.experience.workLabel : tr.experience.eduLabel}
                   </span>
                   <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
                     {exp.period}
