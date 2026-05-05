@@ -1,7 +1,7 @@
 {
   "bio": {
-    "short": "Étudiant motivé et autonome en développement web, passionné par la création de sites web modernes et fonctionnels.",
-    "full": "Capable de travailler à distance avec rigueur, de respecter les délais et de m'adapter rapidement aux besoins des clients. À la recherche de missions freelance pour mettre en pratique mes compétences techniques et accompagner les entreprises dans leur présence en ligne.",
+    "short": "Développeur Full-Stack freelance avec plusieurs applications livrées en production, actuellement en formation en informatique.",
+    "full": "Développeur sérieux, capable de travailler à distance avec rigueur et de respecter les délais. Plusieurs applications livrées pour des clients réels. Disponible pour de nouvelles missions freelance.",
     "motivation": "Ce qui me motive : Transformer des idées en solutions digitales concrètes et performantes."
   },
   "education": [
@@ -35,8 +35,8 @@
     },
     {
       "name": "Anglais",
-      "level": "Intermédiaire",
-      "percent": 50
+      "level": "Intermédiaire-Avancé",
+      "percent": 65
     }
   ],
   "navLinks": [
@@ -73,14 +73,14 @@
     "phone": "+216 94 816 735",
     "location": "Nabeul, Tunisie",
     "github": "https://github.com/rayenn-ar",
-    "linkedin": "https://linkedin.com/in/ayari-rayen-98242630a",
+    "linkedin": "https://www.linkedin.com/in/ayari-rayen-98242630a",
     "cvPath": "/CV_Ayari_Rayen_Pro.html",
     "available": true
   },
   "projects": [
     {
       "id": 1,
-      "title": " Application POS Superette",
+      "title": "Application POS Superette",
       "description": "Application POS (Point of Sale) complète pour la gestion d'une supérette : caisse enregistreuse, suivi des ventes, gestion des stocks et des fournisseurs. Fonctionne 100% hors ligne.",
       "role": "Développeur freelance — conception, développement, déploiement.",
       "technologies": [
@@ -313,8 +313,8 @@
         "Résolution de bugs"
       ],
       "toImprove": [
-        "Backend avancé (Node.js)",
-        "Design UI/UX",
+        "Architecture microservices & CI/CD",
+        "UI/UX Design avancé",
         "Tests automatisés"
       ]
     },
@@ -328,7 +328,7 @@
       ],
       "toImprove": [
         "Prise de parole en public",
-        "Perfectionnisme (j'apprends à prioriser)"
+        "Perfectionnisme"
       ]
     }
   },

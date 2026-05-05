@@ -13,13 +13,13 @@ const translations = {
       cvPath: "/CV_Ayari_Rayen_Pro.html",
     },
     hero: {
-      greeting: "Salut, je suis",
+      greeting: "Bonjour, je suis",
       seeProjects: "Voir mes projets",
       downloadCV: "Télécharger CV",
       bio: {
         short:
-          "Étudiant motivé et autonome en développement web, passionné par la création de sites web modernes et fonctionnels.",
-        full: "Capable de travailler à distance avec rigueur, de respecter les délais et de m'adapter rapidement aux besoins des clients. À la recherche de missions freelance pour mettre en pratique mes compétences techniques et accompagner les entreprises dans leur présence en ligne.",
+          "Développeur Full-Stack freelance avec plusieurs applications livrées en production, actuellement en formation en informatique.",
+        full: "Développeur sérieux, capable de travailler à distance avec rigueur et de respecter les délais. Plusieurs applications livrées pour des clients réels. Disponible pour de nouvelles missions freelance.",
         motivation:
           "Ce qui me motive : Transformer des idées en solutions digitales concrètes et performantes.",
       },
@@ -34,8 +34,8 @@ const translations = {
       weaknesses: "Points Faibles",
       bio: {
         short:
-          "Étudiant motivé et autonome en développement web, passionné par la création de sites web modernes et fonctionnels.",
-        full: "Capable de travailler à distance avec rigueur, de respecter les délais et de m'adapter rapidement aux besoins des clients. À la recherche de missions freelance pour mettre en pratique mes compétences techniques et accompagner les entreprises dans leur présence en ligne.",
+          "Développeur Full-Stack freelance avec plusieurs applications livrées en production, actuellement en formation en informatique.",
+        full: "Développeur sérieux, capable de travailler à distance avec rigueur et de respecter les délais. Plusieurs applications livrées pour des clients réels. Disponible pour de nouvelles missions freelance.",
         motivation:
           "Ce qui me motive : Transformer des idées en solutions digitales concrètes et performantes.",
       },
@@ -46,7 +46,7 @@ const translations = {
         "Git & GitHub",
         "Résolution de bugs",
       ],
-      technicalToImprove: ["Backend avancé (Node.js)", "Design UI/UX", "Tests automatisés"],
+      technicalToImprove: ["Architecture microservices & CI/CD", "UI/UX Design avancé", "Tests automatisés"],
       softStrong: ["Communication claire", "Travail en autonomie", "Respect des délais"],
       softToImprove: ["Gestion du stress", "Prise de parole en public"],
     },
@@ -113,13 +113,13 @@ const translations = {
       cvPath: "/CV_Ayari_Rayen_Pro_EN.html",
     },
     hero: {
-      greeting: "Hi, I am",
+      greeting: "Hi, I'm",
       seeProjects: "See my projects",
       downloadCV: "Download CV",
       bio: {
         short:
-          "Motivated and self-driven web development student, passionate about building modern and functional websites.",
-        full: "Able to work remotely with discipline, meet deadlines, and quickly adapt to client needs. Looking for freelance missions to apply my technical skills and help businesses grow their online presence.",
+          "Freelance Full-Stack Developer with several applications delivered in production, currently studying computer science.",
+        full: "A reliable developer, able to work remotely with discipline and meet deadlines. Several applications delivered for real clients. Available for new freelance missions.",
         motivation: "What drives me: Turning ideas into concrete, high-performing digital solutions.",
       },
     },
@@ -133,8 +133,8 @@ const translations = {
       weaknesses: "Areas to Improve",
       bio: {
         short:
-          "Motivated and self-driven web development student, passionate about building modern and functional websites.",
-        full: "Able to work remotely with discipline, meet deadlines, and quickly adapt to client needs. Looking for freelance missions to apply my technical skills and help businesses grow their online presence.",
+          "Freelance Full-Stack Developer with several applications delivered in production, currently studying computer science.",
+        full: "A reliable developer, able to work remotely with discipline and meet deadlines. Several applications delivered for real clients. Available for new freelance missions.",
         motivation: "What drives me: Turning ideas into concrete, high-performing digital solutions.",
       },
       technicalStrong: [
@@ -144,7 +144,7 @@ const translations = {
         "Git & GitHub",
         "Bug resolution",
       ],
-      technicalToImprove: ["Advanced backend (Node.js)", "UI/UX design", "Automated testing"],
+      technicalToImprove: ["Microservices & CI/CD", "Advanced UI/UX Design", "Automated testing"],
       softStrong: ["Clear communication", "Independent work", "Meeting deadlines"],
       softToImprove: ["Stress management", "Public speaking"],
     },
